@@ -1,0 +1,25 @@
+<div class="contents row">
+  <div class="container">
+    <h3>メニュー登録</h3>
+<%= form_with(model: @post, local: true) do |form| %>
+    <%= form.label "料理名" %>
+    <span class="indispensable">必須</span><br/>
+    <%= form.text_field :title %><br/>
+        <%= form.label "写真" %>
+    <span class="indispensable">必須</span><br/>
+    <%= form.file_field :image, id:"item-image" %><br/>
+    <%= form.label "料理名" %>
+    <span class="indispensable">必須</span>
+    <div id="image-list"></div>
+    <%= form.text_area :text, placeholder: "詳細・食材など記述してください", rows: "10" %>
+    <div class="weight-bold-text">
+    ジャンル
+    <span class="indispensable">必須</span>
+    </div>
+    <%= form.collection_select(:jenre_id, Jenre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %><br/>
+
+    <%= form.submit "登録" %><br/>
+    <%= link_to "もどる", root_path%>
+<% end %>
+  </div>
+</div>
