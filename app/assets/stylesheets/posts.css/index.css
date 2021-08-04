@@ -1,0 +1,157 @@
+.main{
+  width: 100%;
+  height: 100%;
+}
+.top-page-header{
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+  border-bottom:solid rgb(21, 41, 51);
+  margin:0 50px;
+}
+
+.header-title{
+  font-size: 90px;
+  font-family: 'Caveat', cursive;
+  color: rgb(21, 41, 51);
+}
+.header-side-bottom{
+  display: flex;
+  width: 25%;
+  justify-content: space-between;
+}
+
+.category-content ul{
+  list-style: none;
+  font-family: 'Londrina Shadow', cursive;
+
+}
+
+.user-nickname{
+  font-size: 25px;
+  font-family: 'Sacramento', cursive;
+  color: rgb(21, 41, 51);
+  line-height: 100px;
+  text-decoration: none;
+}
+
+.login{
+  font-size: 25px;
+  color: rgb(21, 41, 51);
+  line-height: 100px;
+  text-decoration: none;
+
+}
+
+.sign-up{
+  font-size: 25px;
+  color: rgb(21, 41, 51);
+  line-height: 100px;
+  text-decoration: none;
+
+}
+.sign-in{
+  font-size: 25px;
+  color: rgb(21, 41, 51);
+  line-height: 100px;
+  text-decoration: none;
+
+}
+.logout{
+  font-size: 25px;
+  color: rgb(21, 41, 51);
+  line-height: 100px;
+  text-decoration: none;
+
+}
+.border-bottom{
+  height: 50px;
+
+}
+.jenre-list{
+  display: flex;
+  justify-content: space-between;
+  border-bottom:solid rgb(21, 41, 51);
+  margin: 0 50px;
+  padding: 10px;
+  font-size: 25px;
+  height: 10%;
+}
+.main-wrapper{
+  height: 500px;
+  margin: 0 50px;
+  align-items: flex-start;
+}
+.main-wrapper h5{
+  font-size: 30px;
+}
+.main-content{
+  display: flex;
+  justify-content: flex-start;
+ 
+}
+
+.left-content{
+  align-items: center;
+  width: 1000px;
+  padding: 0 30px;
+}
+
+.main-image{
+  display: block;
+  height: 300px;
+  width: 750px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+
+}
+.main-title{
+  width : 700px;
+  height: 10%;
+  font-size: 30px;
+  border:1px solid lightgray;
+  padding: 3px;
+  margin: 0 auto;
+
+}
+.main-text{
+  height: 30px;
+  font-size: 20px;
+  width : 700px;
+  border:1px solid lightgray;
+  padding: 3px;
+  margin: 0 auto;
+
+}
+
+.right-content{
+  align-items: center;
+  width: 500px;
+  padding: 75px;
+  margin: 0 50px;
+  border-left: 3px solid black;
+}
+.right-content p{
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.swipe-container{
+  height: 300px;
+  margin: 0 50px;
+
+}
+.swipe-wrapper{
+  display: flex;
+  margin: 0 80px;
+
+  border-top: 3px solid black;
+  
+} 
+.slide-image{
+  width: 200px;
+  height: 250px;
+  margin: 20px 50px;
+  
+}
