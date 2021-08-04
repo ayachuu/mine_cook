@@ -16,47 +16,11 @@
   color: rgb(21, 41, 51);
 }
 .header-side-bottom{
-  display: flex;
   width: 25%;
   justify-content: space-between;
 }
 
-.category-content ul{
-  list-style: none;
-  font-family: 'Londrina Shadow', cursive;
 
-}
-
-.user-nickname{
-  font-size: 25px;
-  font-family: 'Sacramento', cursive;
-  color: rgb(21, 41, 51);
-  line-height: 100px;
-  text-decoration: none;
-}
-
-.login{
-  font-size: 25px;
-  color: rgb(21, 41, 51);
-  line-height: 100px;
-  text-decoration: none;
-
-}
-
-.sign-up{
-  font-size: 25px;
-  color: rgb(21, 41, 51);
-  line-height: 100px;
-  text-decoration: none;
-
-}
-.sign-in{
-  font-size: 25px;
-  color: rgb(21, 41, 51);
-  line-height: 100px;
-  text-decoration: none;
-
-}
 .logout{
   font-size: 25px;
   color: rgb(21, 41, 51);
