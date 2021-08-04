@@ -5,6 +5,14 @@
   padding: 8% 0 0;
   margin: auto;
 }
+.form-title{
+  text-decoration: none;
+  color: #000000;
+  font-family: 'Caveat', cursive;
+  font-size: 50px;
+  text-align: center;
+
+}
 .form {
   position: relative;
   z-index: 1;
