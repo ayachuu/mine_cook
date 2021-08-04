@@ -1,27 +1,29 @@
-<div class="login-page">
-  <%= link_to "Mine", user_session_path, class:"form-title"%>
-  <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="nickname"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <%= form_with model: @user, url: user_session_path,class: 'registration-main', local: true do |f| %>
+<div class="login_body">
+  <div class="login-page">
+    <%= link_to "Mine", user_session_path, class:"form-title"%>
+    <div class="form">
+      <form class="register-form">
+        <input type="text" placeholder="nickname"/>
+        <input type="password" placeholder="password"/>
+        <input type="text" placeholder="email address"/>
+        <button>create</button>
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+      </form>
+      <%= form_with model: @user, url: user_session_path,class: 'registration-main', local: true do |f| %>
 
-    <form class="login-form">
-      <div class="form-input">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email" %>
-      </div>
-      <div class="field">
-          <%= f.password_field :password, autocomplete: "current-password", placeholder:"password" %>
+      <form class="login-form">
+        <div class="form-input">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email" %>
         </div>
-      <div class="form-button">
-        <%= f.submit "Login" %>
-      </div>
-      <p class="message">Not registered? <a href="/users/sign_up">Create an account</a></p>
-    </form>
-    <% end %>
+        <div class="field">
+            <%= f.password_field :password, autocomplete: "current-password", placeholder:"password" %>
+          </div>
+        <div class="form-button">
+          <%= f.submit "Login" %>
+        </div>
+        <p class="message">Not registered? <a href="/users/sign_up">Create an account</a></p>
+      </form>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,0 +1,64 @@
+<div class="main">
+
+  <div class="top-page-header">
+    <div class="section-global-nav-left">
+    </div>
+    <div class="header-title">
+      Mine
+    </div>
+    <div class="header-side-bottom">
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    </div>
+
+  </div>
+  
+  <div class="category-content">
+
+    <ul class="jenre-list">
+      <li>Main-dish</li>
+      <li>Soup</li>
+      <li>Side-dish1</li>
+      <li>Side-dish2</li>
+      <li>Dessert</li>
+    </ul>
+  </div>
+  <section id="main">
+    <div class="main-wrapper">
+      <div class= "title">[今日のメニュー]</div>
+      <div class="main-content">
+        <section>
+          <div class="left-content">
+            <% @random.each do |post| %>
+              <%= image_tag post.image, class:"main-image" %>
+              <p class="main-title"><%= post.title%></p>
+              <p class="main-text"><%= post.text %></p>
+            <% end %>
+          </div>
+        </section>
+        <section>
+          <div class="right-content">
+            <div class="new-menu">
+              <%# <p><%=link_to 'Menu登録', new_post_path %></P> %>
+            </div>
+          
+            <div class="today-menu">
+             <%# <p><%= link_to "おすすめ", post_path(@random) %></P> %>
+            </div>
+            <div class="serch-menu">
+              <%# <p><%=link_to 'Menu一覧（編集・削除）', post_path(3) %></p> %>
+            </div>
+           
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="swipe-container">
+      <div class="swipe-wrapper">
+      <% @post.each do |post| %>
+        <div class="swipe-slide">
+          <%= image_tag post.image, class:"slide-image" %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+</div>
