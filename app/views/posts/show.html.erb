@@ -1,0 +1,23 @@
+<h3 >
+  <%= link_to "もどる", root_path%>
+</h3>
+<div class="contents row">
+  <% @post.each do |post| %>
+   <div class="content_post">
+    <div class="show-image"><%= image_tag post.image%></div>
+      <div class="more">
+        <span><%= image_tag 'arrow_top.png' %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '編集', edit_post_path(post.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', post_path(post.id), method: :delete %>
+          </li>
+        </ul>
+      </div>
+      <p><%= post.title %></p>
+      
+    </div>
+  <% end %>
+</div>

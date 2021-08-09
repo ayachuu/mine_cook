@@ -15,7 +15,7 @@
   ジャンル
   <span class="indispensable">必須</span>
   </div>
-  <%= form.collection_select(:jenre_id, Jenre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+  <%= form.collection_select(:jenre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
 
   <%= form.submit "変更" %>
   <%= link_to "もどる", root_path%>
