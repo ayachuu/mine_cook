@@ -24,39 +24,67 @@
   </div>
   <section id="main">
     <div class="main-wrapper">
-      <div class= "title">[今日のメニュー]</div>
+      <div class= "title">[おすすめ]</div>
       <div class="main-content">
         <section>
           <div class="left-content">
             <% @random.each do |post| %>
               <%= image_tag post.image, class:"main-image" %>
-              <p class="main-title"><%= post.title%></p>
-              <p class="main-text"><%= post.text %></p>
+              <p class="main-title"><%= "【料理名】#{post.title}" %></p>
+              <p class="main-text"><%= "【レシピ・食材メモ】 #{post.text.truncate(20)}" %></p>
             <% end %>
           </div>
         </section>
         <section>
           <div class="right-content">
             <div class="new-menu">
-              <p><%=link_to 'Menu登録', new_post_path %></P>
+              <p><%=link_to 'Menu(登録)', new_post_path %></P>
             </div>
             <div class="serch-menu">
-              <p><%=link_to 'Menu一覧（編集・削除）', post_path(:id) %></p>
+              <p><%=link_to 'Menu（編集・削除）', post_path(:id) %></p>
             </div>
             <div class="today-menu">
-             <%= link_to "おすすめ", post_path(@random) %>
+             <P><%= link_to "今日のMenu", post_path(@random) %></P>
             </div>
       </div>
     </div>
   </section>
-  <section>
-    <div class="swipe-container">
-      <div class="swipe-wrapper">
-      <% @post.each do |post| %>
-        <div class="swipe-slide">
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<div class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+         <% @post.each do |post| %>
+        <div class="swiper-slide">
           <%= image_tag post.image, class:"slide-image" %>
         </div>
       <% end %>
-      </div>
-    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-scrollbar"></div>
 </div>
+<script>
+  var swiper = new Swiper ('.swiper-container', {
+    loop: true,  
+    autoplay: {
+      dispray: 2000,
+      disable0nInteraction: false,
+    },
+    slidesPerView:2,
+    centeredSlides : true, 
+    effect: 'coverflow', 
+    
+    pagination: {  //ページネーションを表示
+      el: '.swiper-pagination',
+      clickable: true,  //アイコンをクリックすると対応するスライドに移動
+    },
+  
+    navigation: {  //ナビゲーションボタンを表示
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })
+</script> 
+
