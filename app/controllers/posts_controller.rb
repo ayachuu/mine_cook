@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.all
+    @post = Post.find(params[:id])
   end
 
   def edit
@@ -36,6 +36,10 @@ class PostsController < ApplicationController
       render :edit
     end
 
+  end
+
+  def list_up
+    @post = Post.all
   end
 
   private

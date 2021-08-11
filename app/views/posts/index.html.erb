@@ -7,7 +7,7 @@
       Mine
     </div>
     <div class="header-side-bottom">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "logout" %></li>
     </div>
 
   </div>
@@ -15,16 +15,23 @@
   <div class="category-content">
 
     <ul class="jenre-list">
-      <li>Main-dish</li>
-      <li>Soup</li>
-      <li>Side-dish1</li>
-      <li>Side-dish2</li>
-      <li>Dessert</li>
+      <li><div class="today-menu">
+             <%= link_to "Today's Menu", root_path %>
+            </div></li>
+      <li><div class="today-menu">
+             <%= link_to "New!!(Challenge)", post_path(@random) %>
+            </div></li>
+      <li> <div class="new-menu">
+            <%=link_to 'Menu(Register)', new_post_path %>
+            </div></li>
+      <li><div class="serch-menu">
+              <%=link_to 'Menu List', list_up_posts_path %>
+            </div></li>
     </ul>
   </div>
   <section id="main">
     <div class="main-wrapper">
-      <div class= "title">[おすすめ]</div>
+      <div class= "title">[Today's Menu]</div>
       <div class="main-content">
         <section>
           <div class="left-content">
@@ -37,15 +44,13 @@
         </section>
         <section>
           <div class="right-content">
-            <div class="new-menu">
-              <p><%=link_to 'Menu(登録)', new_post_path %></P>
-            </div>
-            <div class="serch-menu">
-              <p><%=link_to 'Menu（編集・削除）', post_path(:id) %></p>
-            </div>
-            <div class="today-menu">
-             <P><%= link_to "今日のMenu", post_path(@random) %></P>
-            </div>
+              <p>Main-dish</P>
+              <p>Soup</P>
+              <p>Side-dish1</P>
+              <p>Side-dish2</P>
+              <p>Dessert</P>
+          </div>
+        </section>
       </div>
     </div>
   </section>
