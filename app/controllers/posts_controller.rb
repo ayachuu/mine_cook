@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_q, only: [:index, :search_genre]
+  before_action :make_instance, only: [:show, :edit, :update]
   
   def index
     @post = Post.all
@@ -21,15 +22,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
   
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to action: :show
     else
@@ -55,4 +53,7 @@ class PostsController < ApplicationController
     @p = Post.ransack(params[:q])
   end
 
+  def make_instance
+    @post = Post.find(params[:id])
+  end
 end

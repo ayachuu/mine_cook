@@ -1,11 +1,12 @@
 .btn-return{
-  font-size: 20px;
-  text-align: center;
-  width: 10vw;
-  /* text-decoration: none; */
-  border: 4px solid #000;
+  font-size: 25px;
+  color: rgb(21, 41, 51);
+  line-height: 100px;
+  text-decoration: none;
+  border: 1px black;
   position: relative;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2.5rem;
+  border: 4px solid #000;
 }
 .btn-return:before {
   position: absolute;

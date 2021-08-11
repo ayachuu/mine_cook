@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main-page">
 
   <div class="top-page-header">
     <div class="section-global-nav-left">
@@ -14,7 +14,7 @@
   
   <div class="category-content">
 
-    <ul class="jenre-list">
+    <ul class="menu-list">
       <li><div class="today-menu">
              <%= link_to "Today's Menu", root_path %>
             </div></li>
@@ -29,12 +29,13 @@
             </div></li>
     </ul>
   </div>
+
   <section id="main">
     <div class="main-wrapper">
-      <div class= "title">[Today's Menu]</div>
       <div class="main-content">
         <section>
           <div class="left-content">
+          <div class= "menu">[Today's Menu]</div><br/>
             <% @random.each do |post| %>
               <%= image_tag post.image, class:"main-image" %>
               <p class="main-title"><%= "【料理名】#{post.title}" %></p>
@@ -44,10 +45,12 @@
         </section>
         <section>
           <div class="right-content">
-             <h1>ユーザー検索</h1>
+             <h1>Genre Search</h1>
                 <%= search_form_for @p, url: search_genre_posts_path do |f| %>
-                  <%= f.label :genre_id_eq, 'ジャンル' %>
+                  <%= f.label :genre_id_eq, '選択して下さい' %>
+                  <div class="genre_form">
                   <%= f.collection_select :genre_id_eq, Genre.all,:id,:name, include_blank: '指定なし'  %>
+                  </div>
                   <br>
                   <%= f.submit '検索' %>
                 <% end %>
@@ -72,6 +75,7 @@
   <div class="swiper-button-next"></div>
   <div class="swiper-scrollbar"></div>
 </div>
+
 <script>
   var swiper = new Swiper ('.swiper-container', {
     loop: true,  
@@ -94,4 +98,3 @@
     },
   })
 </script> 
-
