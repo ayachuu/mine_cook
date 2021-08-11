@@ -1,23 +1,30 @@
-<h3 >
-  <%= link_to "もどる", root_path%>
-</h3>
-<div class="contents row">
-  <% @post.each do |post| %>
-   <div class="content_post">
-    <div class="show-image"><%= image_tag post.image%></div>
-      <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-          <li>
-            <%= link_to '編集', edit_post_path(post.id), method: :get %>
-          </li>
-          <li>
-            <%= link_to '削除', post_path(post.id), method: :delete %>
-          </li>
-        </ul>
+<div class="show_list">
+  <div class="show_image">
+    <%= image_tag @post.image%>
+  </div>
+
+  <div class="show_title">
+    <%= @post.title%>
+  </div>
+
+  <div class="show_text">
+    <div class="note4">
+      <div class="sen4">
+        <%= @post.text%>
       </div>
-      <p><%= post.title %></p>
-      
     </div>
-  <% end %>
+  </div>
+</div>
+<div>
+  <ul>
+    <li>
+      <%= link_to '編集', edit_post_path(@post.id), method: :get %>
+    </li>
+    <li>
+      <%= link_to '削除', post_path(@post.id), method: :delete %>
+    </li>
+    <li>
+      <%= link_to "戻る", root_path %>
+    </li>
+  </ul>
 </div>

@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main-page">
 
   <div class="top-page-header">
     <div class="section-global-nav-left">
@@ -7,27 +7,35 @@
       Mine
     </div>
     <div class="header-side-bottom">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "logout" %></li>
     </div>
 
   </div>
   
   <div class="category-content">
 
-    <ul class="jenre-list">
-      <li>Main-dish</li>
-      <li>Soup</li>
-      <li>Side-dish1</li>
-      <li>Side-dish2</li>
-      <li>Dessert</li>
+    <ul class="menu-list">
+      <li><div class="today-menu">
+             <%= link_to "Today's Menu", root_path %>
+            </div></li>
+      <li><div class="today-menu">
+             <%= link_to "New!!(Challenge)", post_path(@random) %>
+            </div></li>
+      <li> <div class="new-menu">
+            <%=link_to 'Menu(Register)', new_post_path %>
+            </div></li>
+      <li><div class="serch-menu">
+              <%=link_to 'Menu List', list_up_posts_path %>
+            </div></li>
     </ul>
   </div>
+
   <section id="main">
     <div class="main-wrapper">
-      <div class= "title">[おすすめ]</div>
       <div class="main-content">
         <section>
           <div class="left-content">
+          <div class= "menu">[Today's Menu]</div><br/>
             <% @random.each do |post| %>
               <%= image_tag post.image, class:"main-image" %>
               <p class="main-title"><%= "【料理名】#{post.title}" %></p>
@@ -37,15 +45,17 @@
         </section>
         <section>
           <div class="right-content">
-            <div class="new-menu">
-              <p><%=link_to 'Menu(登録)', new_post_path %></P>
-            </div>
-            <div class="serch-menu">
-              <p><%=link_to 'Menu（編集・削除）', post_path(:id) %></p>
-            </div>
-            <div class="today-menu">
-             <P><%= link_to "今日のMenu", post_path(@random) %></P>
-            </div>
+             <h1>Genre Search</h1>
+                <%= search_form_for @p, url: search_genre_posts_path do |f| %>
+                  <%= f.label :genre_id_eq, '選択して下さい' %>
+                  <div class="genre_form">
+                  <%= f.collection_select :genre_id_eq, Genre.all,:id,:name, include_blank: '指定なし'  %>
+                  </div>
+                  <br>
+                  <%= f.submit '検索' %>
+                <% end %>
+          </div>
+        </section>
       </div>
     </div>
   </section>
@@ -65,6 +75,7 @@
   <div class="swiper-button-next"></div>
   <div class="swiper-scrollbar"></div>
 </div>
+
 <script>
   var swiper = new Swiper ('.swiper-container', {
     loop: true,  
@@ -72,7 +83,7 @@
       dispray: 2000,
       disable0nInteraction: false,
     },
-    slidesPerView:2,
+    slidesPerView:4,
     centeredSlides : true, 
     effect: 'coverflow', 
     
@@ -87,4 +98,3 @@
     },
   })
 </script> 
-
