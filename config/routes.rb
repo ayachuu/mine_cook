@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :posts, only:[:index, :new, :create, :show, :edit, :update] do
     collection do 
       get "list_up"
+      get "search_genre"
     end
   end
 end

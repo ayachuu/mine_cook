@@ -44,11 +44,13 @@
         </section>
         <section>
           <div class="right-content">
-              <p>Main-dish</P>
-              <p>Soup</P>
-              <p>Side-dish1</P>
-              <p>Side-dish2</P>
-              <p>Dessert</P>
+             <h1>ユーザー検索</h1>
+                <%= search_form_for @p, url: search_genre_posts_path do |f| %>
+                  <%= f.label :genre_id_eq, 'ジャンル' %>
+                  <%= f.collection_select :genre_id_eq, Genre.all,:id,:name, include_blank: '指定なし'  %>
+                  <br>
+                  <%= f.submit '検索' %>
+                <% end %>
           </div>
         </section>
       </div>
@@ -77,7 +79,7 @@
       dispray: 2000,
       disable0nInteraction: false,
     },
-    slidesPerView:2,
+    slidesPerView:4,
     centeredSlides : true, 
     effect: 'coverflow', 
     

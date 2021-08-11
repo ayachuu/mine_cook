@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  
+  before_action :set_q, only: [:index, :search_genre]
   
   def index
     @post = Post.all
@@ -42,9 +42,17 @@ class PostsController < ApplicationController
     @post = Post.all
   end
 
+  def search_genre
+    @results = @p.result.includes(params[:id])
+  end
   private
 
   def post_params
     params.require(:post).permit(:title, :text, :image, :genre_id).merge(user_id: current_user.id)
   end
+
+  def set_q
+    @p = Post.ransack(params[:q])
+  end
+
 end
