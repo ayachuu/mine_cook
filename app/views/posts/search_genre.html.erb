@@ -1,25 +1,22 @@
 <h1>
-  検索結果
+  <%= link_to "Genre", root_path%>
 </h1>
-<%= link_to "戻る", root_path %>
+<%# 検索結果の個数で条件分岐 %>
+<div class="contents row">
+
 <% if @results.length !=0 %>
 
   <%  @results.each do |post| %>
-    <div class='main'>
-      <div class='item-contents'>
-        <h2 class='title'></h2>
+    <div class='item'>
           <%if post%>
             <div class='list'>
               <%= link_to post_path(post.id) do %>
-              <div class='item-img-content'>
-                <%= image_tag post.image , class: "item-img" if post.image.attached? %>
-              </div>
+                <%= image_tag post.image , class: "list-img" if post.image.attached? %>
+                <p><%= post.title %></p>
               <% end %>
             </div>
-           <br>
-
           <%end%>
-      </div>
+
     </div>
 
   <% end %>

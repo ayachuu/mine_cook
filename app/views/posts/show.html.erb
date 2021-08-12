@@ -1,6 +1,6 @@
 <div class="show_list">
   <div class="show_image">
-    <%= image_tag @post.image%>
+    <%= image_tag @post.image,class: "menu-img"%>
   </div>
 
   <div class="show_title">
@@ -16,15 +16,15 @@
   </div>
 </div>
 <div>
-  <ul>
+  <ul class="btn-content">
     <li>
-      <%= link_to '編集', edit_post_path(@post.id), method: :get %>
+      <%= link_to '編集', edit_post_path(@post.id), method: :get, class:"change-button" %>
     </li>
     <li>
-      <%= link_to '削除', post_path(@post.id), method: :delete %>
+      <%= link_to '削除', post_path(@post.id), method: :delete, class:"change-button" %>
     </li>
     <li>
-      <%= link_to "戻る", root_path %>
+      <%= link_to "戻る", root_path, class:"change-button" %>
     </li>
   </ul>
 </div>

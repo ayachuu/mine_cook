@@ -29,7 +29,6 @@
             </div></li>
     </ul>
   </div>
-
   <section id="main">
     <div class="main-wrapper">
       <div class="main-content">
@@ -37,9 +36,11 @@
           <div class="left-content">
           <div class= "menu">[Today's Menu]</div><br/>
             <% @random.each do |post| %>
-              <%= image_tag post.image, class:"main-image" %>
-              <p class="main-title"><%= "【料理名】#{post.title}" %></p>
-              <p class="main-text"><%= "【レシピ・食材メモ】 #{post.text.truncate(20)}" %></p>
+              <%= link_to post_path(post.id) do %>
+                <%= image_tag post.image, class:"main-image" %>
+                <p class="main-title"><%= "【料理名】#{post.title}" %></p>
+                <p class="main-text"><%= "【レシピ・食材メモ】 #{post.text.truncate(20)}" %></p>
+              <% end %>
             <% end %>
           </div>
         </section>
@@ -54,6 +55,9 @@
                   <br>
                   <%= f.submit '検索' %>
                 <% end %>
+              <h1>
+               ＼Mi divertirò ad avere questo/
+              </h1>
           </div>
         </section>
       </div>
@@ -64,7 +68,7 @@
 <div class="swiper-container">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
-         <% @post.each do |post| %>
+         <% @posts.each do |post| %>
         <div class="swiper-slide">
           <%= image_tag post.image, class:"slide-image" %>
         </div>
