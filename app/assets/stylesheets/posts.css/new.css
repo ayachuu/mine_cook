@@ -1,0 +1,20 @@
+
+h3, h1{
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 50px;
+}
+.new-container{
+  margin: 0 auto;
+  width: 50vw;
+  font-size: 20px;
+}
+.new-image{
+  height: 20vh;
+}
+.submit-return{
+  border: 1px solid green;
+  margin: 27.5rem;
+  background-color: green;
+  color: white;
+}

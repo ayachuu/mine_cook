@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_q, only: [:index, :search_genre]
-  before_action :make_instance, only: [:show, :edit, :update]
+  before_action :make_instance, only: [:show, :edit, :update,]
   
   def index
-    @post = Post.all
+    @posts = Post.all
     @random = Post.order("RAND()").limit(1)
   end
 
