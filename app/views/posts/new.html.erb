@@ -1,8 +1,8 @@
 <div class="contents">
   <div class="new-container">
-    <h3>
+    <h1>
     <%= link_to "New Menu", root_path%> 
-    </h3>
+    </h1>
     <%= form_with(model: @post, local: true) do |form| %>
         <%= form.label "料理名" %>
         <span class="indispensable">: 必須</span><br/>

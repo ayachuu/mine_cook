@@ -1,13 +1,8 @@
 
-h3, h1{
-  text-align: center;
-  font-family: 'Caveat', cursive;
-  font-size: 50px;
-}
 .new-container{
   margin: 0 auto;
-  width: 50vw;
-  font-size: 20px;
+  width: 50%;
+  font-size: 15px;
 }
 .new-image{
   height: 20vh;

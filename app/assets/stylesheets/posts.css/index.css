@@ -2,10 +2,10 @@
   width: 100%;
   padding: 0 3rem;
 }
+/* title */
 .top-page-header{
   display: flex;
   justify-content: space-between;
-  height: 10%;
   border-bottom:solid rgb(21, 41, 51);
   margin:0 50px;
 }
@@ -14,27 +14,27 @@
 }
 .header-title{
   width: 50%;
-  font-size: 90px;
+  font-size: 50px;
   font-family: 'Caveat', cursive;
   color: rgb(21, 41, 51);
 }
 .header-side-bottom{
   width: 25%;
-  padding-top: 50px;
+  padding: 25px;
+
 }
 .logout{
-  font-size: 25px;
-  width: 30px;
+  font-size: 15px;
+  width: 15px;
   color: rgb(21, 41, 51);
-  line-height: 30px;
+  line-height: 15px;
   text-decoration: none;
   border: 1px black;
   position: relative;
-  padding: 1.5rem 2.5rem;
+  padding: 1rem 2rem;
   border: 4px solid #000;
 
 }
-
 
 .logout:before {
   position: absolute;
@@ -45,83 +45,70 @@
   content: '';
   border: 4px dotted #000;
 }
-.border-bottom{
-  height: 50px;
-}
-.category-content{
-  height: 10%;
-}
+/* list */
 .menu-list{
   display: flex;
   justify-content: space-between;
   border-bottom:solid rgb(21, 41, 51);
   margin: 0 50px;
   padding: 10px;
-  font-size: 25px;
+  font-size: 20px;
   height: 10%;
 }
+/* main page */
 .main-wrapper{
-  width: 100%;
+  width: 90%;
+  height: 400px;
   margin: 0 50px;
   padding: 10px;
   display: flex;
 }
 .menu{
-  font-size: 20px;
-}
-
-.main-content{
-  display: flex;
-  justify-content: flex-start;
- 
+  font-size: 15px;
 }
 
 .left-content{
-  align-items: center;
-  width: 50vw;
-  height: 50vh;
-  padding: 0 30px;
+  width: 60vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-image{
-  display: block;
-  height: 30vh;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  padding: 20px;
+  height: 200px;
+  width: 500px;
+  margin: 0 20px;
 
 }
 .main-title{
   height: 10%;
-  font-size: 30px;
+  width: 90%;
+  font-size: 15px;
   border:1px solid lightgray;
   padding: 3px;
-  margin: 8px auto;
 
 }
 .main-text{
   height: 10vh;
-  font-size: 20px;
+  width: 90%;
+  font-size: 15px;
   border:1px solid lightgray;
   padding: 3px;
-  margin: 0 auto;
 
 }
 
 .right-content{
-  align-items: center;
-  width: 35vw;
-  height: 50vh;
-  padding: 75px;
-  margin: 0 50px;
+  width: calc(100% - 50vw);
+  height: 100%;
+  padding: 50px;
+  margin: 0 auto;
   border-left: 3px solid black;
 }
 .right-content h1{
-  font-size: 30px;
+  font-size: 20px;
   text-decoration: none;
 }
-
+/* swiper */
 .swiper-container {
   width: 95%;
   height: 20vh;
