@@ -1,5 +1,5 @@
 <div class="main-page">
-
+ 
   <div class="top-page-header">
     <div class="section-global-nav-left">
     </div>
@@ -9,11 +9,9 @@
     <div class="header-side-bottom">
         <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "logout" %></li>
     </div>
-
   </div>
   
   <div class="category-content">
-
     <ul class="menu-list">
       <li><div class="today-menu">
              <%= link_to "Today's Menu", root_path %>
@@ -31,35 +29,29 @@
   </div>
   <section id="main">
     <div class="main-wrapper">
-      <div class="main-content">
-        <section>
-          <div class="left-content">
-          <div class= "menu">[Today's Menu]</div><br/>
-            <% @random.each do |post| %>
-              <%= link_to post_path(post.id) do %>
-                <%= image_tag post.image, class:"main-image" %>
-                <p class="main-title"><%= "【料理名】#{post.title}" %></p>
-                <p class="main-text"><%= "【レシピ・食材メモ】 #{post.text.truncate(20)}" %></p>
-              <% end %>
+      <div class="left-content">
+        <div class= "menu">[Today's Menu]</div>
+          <% @random.each do |post| %>
+            <%= link_to post_path(post.id) do %>
+              <%= image_tag post.image, class:"main-image" %>
+              <p class="main-title"><%= "【料理名】#{post.title}" %></p>
+              <p class="main-text"><%= "【レシピ・食材メモ】 #{post.text.truncate(20)}" %></p>
             <% end %>
-          </div>
-        </section>
-        <section>
-          <div class="right-content">
-             <h1>Genre Search</h1>
-                <%= search_form_for @p, url: search_genre_posts_path do |f| %>
-                  <%= f.label :genre_id_eq, '選択して下さい' %>
-                  <div class="genre_form">
-                  <%= f.collection_select :genre_id_eq, Genre.all,:id,:name, include_blank: '指定なし'  %>
-                  </div>
-                  <br>
-                  <%= f.submit '検索' %>
-                <% end %>
-              <h1>
-               ＼Era tutto buonissimo./
-              </h1>
-          </div>
-        </section>
+          <% end %>
+      </div>
+      <div class="right-content">
+          <h1>Genre Search</h1>
+            <%= search_form_for @p, url: search_genre_posts_path do |f| %>
+              <%= f.label :genre_id_eq, '選択して下さい' %>
+              <div class="genre_form">
+              <%= f.collection_select :genre_id_eq, Genre.all,:id,:name, include_blank: '指定なし'  %>
+              </div>
+              <br>
+              <%= f.submit '検索' %>
+            <% end %>
+          <h5>
+            ＼Era tutto buonissimo./
+          </h5>
       </div>
     </div>
   </section>
