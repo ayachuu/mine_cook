@@ -65,7 +65,7 @@
  - 「Menu Edit」をクリックするとトップページに遷移する
 
 
-### 工夫したポイント:ransackによる検索機能
+# 工夫したポイント:ransackによる検索機能
 [![Image from Gyazo](https://i.gyazo.com/6f18e4400d9786b0c4fd0d5b6a7b40a4.gif)](https://gyazo.com/6f18e4400d9786b0c4fd0d5b6a7b40a4)
  - メニュー登録時、Active Hashでジャンルを登録することで、ジャンル分けされた一覧を表示することができる
 
@@ -81,7 +81,7 @@ AWS(EC2)
  ### Webサーバー（本番環境）
  Heroku
  ### ソース管理
- GitHub, GitHubDesctop
+ GitHub, GitHubDesktop
  ### テスト
  RSpec
  ### エディタ
