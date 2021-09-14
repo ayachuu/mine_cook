@@ -66,7 +66,7 @@
 
 
 # 工夫したポイント:ransackによる検索機能
-[![Image from Gyazo](https://i.gyazo.com/6f18e4400d9786b0c4fd0d5b6a7b40a4.gif)](https://gyazo.com/6f18e4400d9786b0c4fd0d5b6a7b40a4)
+[![Image from Gyazo](https://i.gyazo.com/d4159d5c889df00988c2021ac0d6273a.gif)](https://gyazo.com/d4159d5c889df00988c2021ac0d6273a)
  - メニュー登録時、Active Hashでジャンルを登録することで、ジャンル分けされた一覧を表示することができる
 
 # 使用技術（開発環境）
